@@ -1,4 +1,5 @@
 const express=require("express")
+const cors=require("cors")
 const { connection } = require("./Config/db")
 const { userRouter } = require("./Router/userRoute")
 const { productRoute } = require("./Router/productRoute")
@@ -7,7 +8,7 @@ const app=express()
 const port=8000
 
 app.use(express.json())
-
+app.use(cors())
 app.get("/",(req,res)=>{
     res.send("Welcome")
 })
